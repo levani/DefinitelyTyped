@@ -19,6 +19,9 @@ export class CacheClass<K, V> {
     hits(): number;
     misses(): number;
     keys(): K[];
+    
+    exportJson(): string;
+    importJson(json: string, options: { skipDuplicates: boolean }): string;
 }
 
 export const Cache: typeof CacheClass;
@@ -35,3 +38,6 @@ export function debug(bool: boolean): void;
 export function hits(): number;
 export function misses(): number;
 export function keys(): any[];
+
+export function exportJson(): string;
+export function importJson(json: string, options: { skipDuplicates: boolean }): string;
